@@ -1,28 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<title>Page not found</title>
+  <title>404 - Page Not Found</title>
   <style>
-    body {font-family:Meiryo;}
+    :root {
+      --bg-color: #f8f9fa;
+      --text-color: #212529;
+      --accent-color: #007bff;
+      --accent-hover: #0056b3;
+      --secondary-text: #6c757d;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #121212;
+        --text-color: #e0e0e0;
+        --accent-color: #37a2ff;
+        --accent-hover: #6db1ff;
+        --secondary-text: #a0a0a0;
+      }
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Meiryo", sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 800px;
+      width: 90%;
+    }
+
+    h1 {
+      font-size: clamp(5rem, 15vw, 8rem);
+      margin: 0;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      background: linear-gradient(45deg, var(--accent-color), #ff4e50);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      font-size: 1.25rem;
+      color: var(--secondary-text);
+      margin-bottom: 2rem;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 640px;
+      margin: 0 auto 2.5rem auto;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      background: #000;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .home-link {
+      display: inline-block;
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      background-color: var(--accent-color);
+      color: white;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: background-color 0.2s, transform 0.2s;
+    }
+
+    .home-link:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .home-link:active {
+      transform: translateY(0);
+    }
   </style>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5HHRGS2');</script>
-<!-- End Google Tag Manager -->
-  </head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5HHRGS2');</script>
+  <!-- End Google Tag Manager -->
+</head>
 <body>
-  <h1>404</h1>
-  <p>Page not found</p>
-  <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/85694907?h=9d7a9fea39&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-  
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5HHRGS2"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-  </body>
+  <div class="container">
+    <h1>404</h1>
+    <p>Oops! The page you're looking for doesn't exist.</p>
+
+    <div class="video-container">
+      <iframe src="https://player.vimeo.com/video/85694907?h=9d7a9fea39&title=0&byline=0&portrait=0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+
+    <a href="/" class="home-link">Return Home</a>
+  </div>
+
+  <script src="https://player.vimeo.com/api/player.js"></script>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5HHRGS2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+</body>
 </html>
